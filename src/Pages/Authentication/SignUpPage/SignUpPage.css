@@ -1,0 +1,64 @@
+
+.sign-up-form {
+    margin: 0 auto;
+}
+
+.sign-up-form input {
+    width: 90%;
+    padding: 0.5rem;
+    margin: 5px 0 22px 0px;
+    font-size: 16px;
+}
+
+#toggle-password {
+    margin-left: -30px;
+    cursor: pointer;
+}
+#eye-icon,#eye-icon-slash{
+    color:black;
+}
+.sign-up {
+    border: none;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: white;
+    cursor:pointer;
+}
+.error{
+    color:red;
+}
+
+.login-form-info {
+    text-align: center;
+    margin: 1rem;
+}
+
+.login-form-link {
+    text-decoration: none;
+    padding: 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 5px;
+    
+}
+.sign-up.btn-disabled{
+    opacity: 0.6;
+  cursor: not-allowed;
+
+}
+
+@media only screen and (max-width:700px) {
+    
+    .form-info {
+        width: 90%;
+    }
+    .sign-up-form input {
+        padding: 5px;
+        font-size: 16px;
+    }
+    .landingpage-img img{
+        display:none;
+    }
+}

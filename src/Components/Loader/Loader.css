@@ -1,0 +1,14 @@
+.loader-wrapper{
+    background:var(--primary-background-color);
+    margin:auto;
+    height:calc(80%-8.9rem);
+    width:100%;
+  
+  
+  
+  }
+  @media screen and (max-width:767px){
+    .loader-wrappper{
+      height:50vh;
+    }
+  }
