@@ -1,0 +1,88 @@
+.sidebar-container{
+    border-right: 1px solid var(--bg-color);
+    flex:0.2;
+    min-width:250px;
+    padding-left: 20px;
+    padding-right: 20px;
+ }
+ .brand{
+     padding-left:0;
+     display: flex;
+ }
+ .brand-name{
+     font-size: 1.8rem;
+     color:var(--primary-color);
+ }
+ .logo-img{
+     border-radius: 50%;
+     width:50px;
+     height:40px;
+ }
+ 
+ .sidebar-items{
+     display: flex;
+     cursor:pointer;
+     align-items:center;
+     
+ }
+ .sidebar-items .material-icons{
+     padding:25px;
+ }
+ .sidebar-items h2{
+     font-weight: 800;
+     font-size: 20px;
+     margin-right: 20px;
+ }
+ .sidebar-items:hover{
+     background-color: var(--primary-background-color);
+     border-radius: 30px;
+     color:white;
+     transition :color 100ms ease out;
+     
+ }
+ 
+ .sidebar-tweet-btn{
+     width:100%;
+     background-color: var(--primary-background-color);
+     color:white;
+     border:none;
+     height:50px;
+     font-weight: 900;
+     border-radius: 50px;
+     margin-top: 20px;
+     
+ }
+ 
+ 
+ @media only screen and (max-width:1200px){
+     .sidebar-container{
+         min-width:5rem;
+         padding-left: 5px;
+    padding-right: 5px;
+    flex:0;
+     }
+     .sidebar-items{
+         width:5rem;
+         
+     }
+     .sidebar-items h2{
+         display: none;
+     }
+     .sidebar-tweet-btn{
+         display:none;
+     }
+     .brand-name{
+         display:none;
+     }
+    
+     
+ }
+ 
+ @media only screen and (max-width:900px){
+     .sidebar-container{
+        display:none;
+     }
+    
+    
+     
+ }
