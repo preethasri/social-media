@@ -9,8 +9,9 @@
      padding-left:0;
      display: flex;
  }
+ 
  .brand-name{
-     font-size: 1.8rem;
+     font-size: 2rem;
      color:var(--primary-color);
  }
  .logo-img{
@@ -25,21 +26,15 @@
      align-items:center;
      
  }
- .sidebar-items .material-icons{
+ .sidebar-items .material-icons,.user-avatar{
      padding:25px;
  }
  .sidebar-items h2{
-     font-weight: 800;
-     font-size: 20px;
+     
+     font-size: 16px;
      margin-right: 20px;
  }
- .sidebar-items:hover{
-     background-color: var(--primary-background-color);
-     border-radius: 30px;
-     color:white;
-     transition :color 100ms ease out;
-     
- }
+ 
  
  .sidebar-tweet-btn{
      width:100%;

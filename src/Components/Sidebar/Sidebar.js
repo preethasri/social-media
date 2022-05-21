@@ -1,13 +1,13 @@
 import {useState} from 'react'
 import {Link,NavLink} from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import {UserAvatar} from '../userAvatar/userAvatar'
+import {UserAvatar} from '../UserAvatar/UserAvatar'
 import {PostModal} from '../../features/post'
 import './Sidebar.css'
 const activeStyle={
-    backgroundColor:"#d9b3ff",
+    backgroundColor:"#c175ff",
     fontWeight:"bold",
-    color:"white",
+    color:"black",
 }
 
 export const Sidebar=()=>{
@@ -23,13 +23,13 @@ export const Sidebar=()=>{
         <div className='sidebar-container'>
         <div className='brand'>
             <Link to="/" className='link-tag'>
-          <img src=".\assets\images\logo.png" className='logo-img'/>
+          
           <div className='brand-name'>Connect</div>
           </Link>
        </div>
         
         <NavLink to="/" style={({isActive })=>(isActive ?activeStyle :undefined)}>
-        <div className='sidebar-items active'>
+        <div className='sidebar-items'>
           <span className="material-icons">home</span>
           <h2>Home</h2>
 
@@ -48,7 +48,7 @@ export const Sidebar=()=>{
         </div>
         <NavLink to={`/profile/${currentUser?.username}`} style={({isActive })=>(isActive ?activeStyle :undefined)}></NavLink>
         <div className="sidebar-items">
-        <UserAvatar user={currentUser} />
+        <UserAvatar user={currentUser}  />
         <h2>Profile</h2>
         </div>
         <div className="sidebar-items">
