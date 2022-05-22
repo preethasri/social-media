@@ -1,5 +1,5 @@
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
-import { loginService,signUpService } from "../../services/authService/authService";
+import { loginService,signUpService } from "../../services";
 
 export const loginHandler=createAsyncThunk("auth/loginHandler",
 async(arg,{rejectWithValue})=>{
