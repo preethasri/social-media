@@ -5,5 +5,8 @@ export {
     editCommentService,
     deleteCommentService,
   } from "./postServices";
-  export {loginService,signUpService} from './authService'
+  export {loginService,signUpService} from './authService/authService'
+
+
+export {getAllUserService,getBookmarkService,addBookmarkService,removeBookmarkService,followUserService,unfollowUserService,updateProfileService} from "./userService"
   

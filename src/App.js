@@ -1,14 +1,13 @@
 import "./App.css";
-import {MyRoutes} from './Components/MyRoutes'
-import {Toaster} from 'react-hot-toast'
+import {MyRoutes} from './Components'
+
 function App() {
 
     
   return(
     <>
-    
+
     <MyRoutes />
-    <Toaster />
     </>
   )
       

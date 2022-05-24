@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import { useNavigate } from "react-router-dom"
 import { UserAvatar } from "../UserAvatar/UserAvatar"
 
-export const SuggestedUsers=()=>{
+ const SuggestedUsers=()=>{
     const {token,user}=useSelector((state)=>state.auth)
     const {users}=useSelector((state)=>state.user)
     const dispatch=useDispatch();
@@ -56,4 +56,4 @@ export const SuggestedUsers=()=>{
     )
 
 }
-export {Aside}
+export {SuggestedUsers}

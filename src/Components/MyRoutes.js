@@ -5,17 +5,17 @@ import React,{useEffect} from 'react'
 import { Navigate } from 'react-router-dom'
 import { ResetScroll } from './ResetScroll'
 import { useSelector } from 'react-redux'
-const MyRoutes=()=>{
+
+ export const MyRoutes=()=>{
     
     const {token}=useSelector((state)=>state.auth)
    
     return(
         <div>
-            <ResetScroll>
-
-    <Routes>
+          <ResetScroll>  
+        <Routes>
         <Route element={<PrivateRoute />} >
-        <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
         </Route>
         
         {!token ?(
@@ -34,7 +34,7 @@ const MyRoutes=()=>{
     
     </Routes>
     </ResetScroll>
+    
     </div>
     )
 }
-export {MyRoutes}
