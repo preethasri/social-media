@@ -3,7 +3,7 @@ import {getAllPostsService,getSinglePostService,createPostService,editPostServic
   addCommentService,
   editCommentService,
   deleteCommentService,
-} from "services";
+} from "../../services";
 import toast from "react-hot-toast";
 
 export const getPosts = createAsyncThunk(
