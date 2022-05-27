@@ -24,7 +24,7 @@ export const NewPost=()=>{
     }
 
     return(
-        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-white text-sm border-b border-black px-4 py-3 cursor-text " onClick={(e)=>{
+        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-[#f1f1f1] text-sm border-b border-primarybg px-4 py-3 cursor-text " onClick={(e)=>{
             e.stopPropagation() 
           focusInput(newPostRef)}}>
          <UserAvatar user={currentUser} />

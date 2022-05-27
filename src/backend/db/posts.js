@@ -17,6 +17,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "adarshbalika",
+    fullName:"Adarsh Balika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments:[]
@@ -75,6 +76,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "swetha",
+    fullName:"Swetha Srinivasan",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -103,6 +105,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "tanay",
+    fullName:"Tanay Pratap",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments:[]
@@ -117,6 +120,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "srinithi",
+    fullName:"Srinithi Sridharan",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -145,6 +149,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "adarshbalika",
+    fullName:"Adarsh Balika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments:[]

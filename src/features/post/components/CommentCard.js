@@ -8,7 +8,7 @@ import { getPostDate} from "../../../utils";
 export const CommentCard=({comment,postId})=>{
     const navigate=useNavigate()
 
-    const {user}=useSelector((state)=>state.auth)
+    
 
     const {username,firstName,createdAt,comment:commentText}=comment
     const [showOptions,setShowOptions]=useState(false)
@@ -38,7 +38,7 @@ export const CommentCard=({comment,postId})=>{
                         <span className="text-gray-600">.</span>
                         <div className="text-gary-600">{getPostDate(createdAt)}</div>
                  </div>
-                 {loggedInUser ?(
+                 
                      <div className="relative">
                           <i className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-primarybg rounded-full" 
                           onClick={(e)=>{
@@ -50,7 +50,7 @@ export const CommentCard=({comment,postId})=>{
                                   <CommentOptionModal comment={comment} postId={postId} setShowOptions={setShowOptions} />
                                   ):null}
                                   </div>
-                              ):null}
+                        
                               </div>
                               <div>{commentText}</div>
     

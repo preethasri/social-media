@@ -25,20 +25,19 @@ export const PostCard = ({ post }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [showCommentModal, setShowCommentModal] = useState(false);
 
-  const currentPost = posts?.find((dbPost) => dbPost._id === post._id);
+  const currentPost = posts.find((dbPost) => dbPost._id === post._id);
   const { _id, username, fullName, content, id, likes, createdAt } =
     currentPost;
 
-  const currentUser = users?.find(
-    (dbUser) => dbUser.username === post.username
-  );
-
+    const currentUser = users?.find(
+      (dbUser) => dbUser.username === post.username
+    );
   useOnClickOutside(postRef, setShowOptions);
+  
 
   return (
     <div
-      className="grid grid-cols-[2rem_1fr] gap-2 bg-darkSecondary text-sm border-b border-darkGrey px-4 py-3 cursor-pointer"
-    
+      className="grid grid-cols-[2rem_1fr] gap-2 bg-darkSecondary text-sm border-b border-darkGrey px-4 py-3 cursor-pointer"onClick={() => navigate(`/post/${id}`)}
       ref={postRef}
     >
       <div
@@ -98,17 +97,9 @@ export const PostCard = ({ post }) => {
                   : dispatch(likePost({ token, _id }));
               }}
             >
-              <i
-                className={` fa-heart p-2 ${
-                  LikedByLoggedUser(currentPost, user)
-                    ? "fa-solid text-red"
-                    : "fa-regular"
-                }`}
-              ></i>
+                 <i className={`fa-heart p-2 ${LikedByLoggedUser(currentPost,user)}?"fa-solid text-red" :"fa-regular" }`}></i>
             </button>
-            {likes.likeCount > 0 && (
-              <span className="ml-1">{likes.likeCount}</span>
-            )}
+            
           </div>
 
           <div>
@@ -122,7 +113,7 @@ export const PostCard = ({ post }) => {
               <i className="fa-regular fa-message p-2"></i>
             </button>
             {currentPost.comments > 0 && (
-              <span className="ml-1">{currentPost.comments}</span>
+              <span className="ml-1">{currentPost.comments.length}</span>
             )}
           </div>
 
@@ -139,7 +130,7 @@ export const PostCard = ({ post }) => {
             
              <i className={`fa-bookmark p-2 ${PostInBookmarks(bookmarks,_id)?"fa-solid text-primary ":"fa-regular"}`}></i>
           </button>
-
+           
           <button
             className="cursor-pointer hover:bg-dark hover:rounded-full"
             onClick={(e) => {
