@@ -74,7 +74,7 @@ export const SinglePost=()=>{
                                     }}>
                                      <div className='flex flex-col cursor-pointer' >
                                          <span className='font-bold tracking-wide'>
-                                            {currentPost?.firstName}
+                                            {currentPost?.fullName}
                                          </span>
                                          <span className='text-gray-600 -mt-1'>
                                              @{currentPost?.username}

@@ -41,16 +41,19 @@ export const Sidebar=()=>{
         <h2>Explore</h2>
         </div>
         </NavLink>
-        <NavLink to="/bookmarks" style={({isActive })=>(isActive ?activeStyle :undefined)}></NavLink>
+        <NavLink to="/bookmarks" style={({isActive })=>(isActive ?activeStyle :undefined)}>
         <div className="sidebar-items">
         <span className="material-icons">bookmark</span>
         <h2>BookMarks</h2>
+        
         </div>
-        <NavLink to={`/profile/${currentUser?.username}`} style={({isActive })=>(isActive ?activeStyle :undefined)}></NavLink>
+        </NavLink>
+        <NavLink to={`/profile/${currentUser?.username}`} style={({isActive })=>(isActive ?activeStyle :undefined)}>
         <div className="sidebar-items">
         <UserAvatar user={currentUser}  />
-        <h2>Profile</h2>
+        <h2>{currentUser?.fullName}</h2>
         </div>
+        </NavLink>
         <div className="sidebar-items">
         <span className="material-icons">logout</span>
         <h2>Logout</h2>

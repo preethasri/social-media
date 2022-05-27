@@ -138,8 +138,7 @@ export const userSlice = createSlice({
   initialState: {
     users: [],
     bookmarks: [],
-   
-    isLoading: false,
+     isLoading: false,
     error: "",
   },
 

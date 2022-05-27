@@ -33,7 +33,7 @@ export const HomePage=()=>{
     return(
         <>
         
-        <div className="home-container grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+        <div className="connect-container grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto bg-[#f1f1f1]">
             <Sidebar />
             <div className="sm:border-x border-darkGrey">
            <h1 className="text-bold p-4 sticky top:0 bg-[#f1f1f1] backdrop-blur-sm z-20 border-b border-darkGrey flex items-center justify-between rounded-full text-primary-900">

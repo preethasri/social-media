@@ -1,12 +1,11 @@
 .loader-wrapper{
-    background:var(--primary-background-color);
+  
     margin:auto;
-    height:calc(80%-8.9rem);
-    width:100%;
-  
-  
-  
-  }
+}
+.loader-wrapper img{
+  width: 120px;
+  height: 120px;
+}
   @media screen and (max-width:767px){
     .loader-wrappper{
       height:50vh;

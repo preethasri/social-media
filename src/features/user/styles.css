@@ -1,0 +1,19 @@
+[contenteditable="true"]:empty:before {
+    content: attr(placeholder);
+    color:black;
+  }
+
+.profile-details > .user-avatar,
+.profile-details > .user-avatar >*{
+    height:7rem;
+    width:7rem;
+    font-size:2rem;
+}
+
+.edit-profile > .user-avatar,
+.edit-profile > .user-avatar >*{
+    height:7rem;
+    width:7rem;
+    font-size:2rem;
+}
+
