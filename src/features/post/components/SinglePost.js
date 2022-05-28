@@ -10,7 +10,7 @@ import { PostOptionModal,
        CommentCard,
        addComment,
  } from "../../../features/post"
-import {addBookmark,removeBookmark,getAllUsers,} from '../../../features/user/userSlice'
+import {addBookmark,removeBookmark,getAllUsers,FollowListModal} from '../../../features/user'
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import { LikedByLoggedUser,PostInBookmarks,focusInput,getPostDate } from '../../../utils'
 
@@ -20,7 +20,12 @@ export const SinglePost=()=>{
     const navigate=useNavigate();
 
   const {user,token}=useSelector((state)=>state.auth)
-  const {posts,singlePost:currentPost,isLoading}=useSelector((state)=>state.post)
+  const {
+    
+    singlePost,
+    posts,
+    isLoading,
+  } = useSelector((state) => state.post);
    const {users,bookmarks}=useSelector((state)=>state.user)
    const dispatch=useDispatch();
 
@@ -30,17 +35,26 @@ export const SinglePost=()=>{
  
    const postRef=useRef()
    const newCommentRef=useRef();
-
+   const currentPost=posts.find((post)=>post.id===postId)
    const currentUser=users?.find((dbUser)=>dbUser.username===currentPost?.username)
-
+  console.log(comment)
    const loggedInUser=users.find((dbUser)=>dbUser.username===user.username)
 
-   useEffect(()=>{
-       dispatch(getSinglePost(postId))
-       dispatch(getAllUsers())
-      return ()=>dispatch(resetSinglePost())
-   },[posts,postId,dispatch])
-   useOnClickOutside(postRef,setShowOptions)
+//    useEffect(()=>{
+//        dispatch(getSinglePost(postId))
+//        dispatch(getAllUsers())
+//       return ()=>dispatch(resetSinglePost())
+//    },[posts,postId,dispatch])
+//    useOnClickOutside(postRef,setShowOptions)
+//    console.log(currentPost)
+
+function commentSubmitHandler(e) {
+    e.preventDefault();
+    if (comment.trim()) {
+        dispatch(addComment({ token, postId: currentPost._id, commentData: { comment } }));
+    }
+    setComment("");
+}
 
    return(
        <div className='grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-100% lg:[w-80%] mb-16 sm:m-auto'>
@@ -53,7 +67,7 @@ export const SinglePost=()=>{
                <div>
                    {isLoading ?(
                        <Loader />
-                   ):(
+                   ):currentPost?(
                        <div className='flex flex-col gap-2 text-sm border-b border-grey px-4 py-3 break-all' ref={postRef}>
                            <div className='grid grid-cols-[2rem_1fr]gap-2'>
                                <div className='cursor-pointer'
@@ -169,37 +183,37 @@ export const SinglePost=()=>{
                            </div>
                            <div className='grid grid-cols-[2rem_1fr] gap-2 pt-3 border-b border-primarybg'>
                                <UserAvatar user={loggedInUser} />
-                                <form className='flex justify-between' onSubmit={
-                                    (e)=>{e.preventDefault()
-                                    dispatch(addComment({
-                                        token,
-                                        commentData:{comment},
-                                        postId:currentPost._id,
-                                    }))
-                                    setComment('') }}>
+                                <form className='flex justify-between' 
+                                onSubmit={commentSubmitHandler}>
                                         <input type="text" 
-                                        required ref={newCommentRef} 
+                                        required 
+                                        ref={newCommentRef} 
                                         placeholder="comment your reply" 
-                                        className='outline-none w-full bg-inherit'  value={comment} onChange={(e)=>setComment(e.target.value)}/>
+                                        className='outline-none w-full bg-inherit' 
+                                         value={comment} 
+                                         onChange={(e)=>setComment(e.target.value)}/>
                                         <button className='bg-primarybg rounded-full py-1 px-3 ml-4 disabled:opacity-50 disabled:cursor-not-allowed w-[5.2rem]' 
                                         disabled={!comment.trim()} 
-                                        type="submit"> Reply </button>
+                                        type="submit" > Reply </button>
                                         </form>
                                 
                            </div>
-                           {currentPost?.comments.length >0 ?
+                           {currentPost?.comments ?
                             [...currentPost?.comments] ?.reverse()
                             .map((comment)=>(
-                                <CommentCard comment={comment} ket={comment._id} postId={currentPost._id}/>
+                                <CommentCard comment={comment} key={comment._id} currentPost={currentPost}/>
                             )):null
                         }
-                        </div>
+                        </div>):(
+                            <p className='p-4 text-center'>Post not found</p>
+                        )}
 
-                   )}
+                   
                </div>
                {showLikesModal ?(
                    <div className='bg-[#000000] top-0 left-0 w-full h-full z-40 flex justify-center items-center'>
-                       followers
+                       <FollowListModal followModal={{title:"Liked By", list:currentPost?.likes.likedBy}}
+                        setFollowModal={setShowLikesModal} />
                    
                    
                    </div>

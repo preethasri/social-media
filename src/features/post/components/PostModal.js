@@ -33,7 +33,7 @@ export const PostModal=({post,setShowNewPostModal,setShowOptions})=>{
         if(post) newPostRef.current.innerText=post.content;
     },[post])
     return(
-        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-[#f1f1f1] text-sm px-4 py-3 cursor-text w-[80%] rounded border"
+        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-[#f1f1f1] text-sm px-4 py-3 cursor-text w-[80%] rounded border-white"
         onClick={(e)=>{
             e.stopPropagation();
             focusInput(newPostRef)
@@ -61,8 +61,8 @@ export const PostModal=({post,setShowNewPostModal,setShowOptions})=>{
                    </button>
                    <button 
                    type="submit"
-                    className="bg-primarybg py-1 px-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed">
-                    disabled={!input.trim() || input.trim()===post.content}{post? "Save" :"Post"}
+                    className="bg-primarybg py-1 px-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={!input.trim() }>{post? "Save" :"Post"}
                    </button>
                </div>
 

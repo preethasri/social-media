@@ -1,8 +1,9 @@
 import {useState} from 'react'
 import {Link,NavLink} from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import {UserAvatar} from '../UserAvatar/UserAvatar'
 import {PostModal} from '../../features/post'
+import { logOutHandler } from '../../Pages/Authentication';
 import './Sidebar.css'
 const activeStyle={
     backgroundColor:"#c175ff",
@@ -17,6 +18,7 @@ export const Sidebar=()=>{
     const currentUser=users.find((dbUser)=>dbUser.username===user.username)
 
     const [showNewPostModal,setShowNewPostModal]=useState(false)
+    const dispatch=useDispatch()
 
     return(
         <>
@@ -55,8 +57,10 @@ export const Sidebar=()=>{
         </div>
         </NavLink>
         <div className="sidebar-items">
-        <span className="material-icons">logout</span>
+        <button onClick={()=>dispatch(logOutHandler())} className="sidebar-items" >
+        <span className="material-icons"   >logout</span>
         <h2>Logout</h2>
+        </button>
         </div>
        
 
@@ -65,7 +69,10 @@ export const Sidebar=()=>{
 
         </button>
         {showNewPostModal ?(
-            <div className='modal-container' onClick={(e)=>e.stopPropagation()}>
+            <div className=' top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default' onClick=
+            {(e)=>e.stopPropagation()}
+        
+            >
               <PostModal setShowNewPostModal={setShowNewPostModal} />
             </div>
         ):(

@@ -97,9 +97,17 @@ export const PostCard = ({ post }) => {
                   : dispatch(likePost({ token, _id }));
               }}
             >
-                 <i className={`fa-heart p-2 ${LikedByLoggedUser(currentPost,user)}?"fa-solid text-red" :"fa-regular" }`}></i>
+                  <i
+                className={` fa-heart p-2 ${
+                  LikedByLoggedUser(currentPost, user)
+                    ? "fa-solid text-red"
+                    : "fa-regular"
+                }`}
+              ></i>
             </button>
-            
+            {currentPost?.likes.likeCount >0 &&(
+                                       <span className='ml-1'>{currentPost?.likes.likeCount}</span>
+                                   )}
           </div>
 
           <div>
@@ -131,15 +139,7 @@ export const PostCard = ({ post }) => {
              <i className={`fa-bookmark p-2 ${PostInBookmarks(bookmarks,_id)?"fa-solid text-primary ":"fa-regular"}`}></i>
           </button>
            
-          <button
-            className="cursor-pointer hover:bg-dark hover:rounded-full"
-            onClick={(e) => {
-              e.stopPropagation();
-              sharePost(id);
-            }}
-          >
-            <i className="fa-solid fa-share-nodes p-2"></i>
-          </button>
+          
         </div>
       </div>
 
@@ -150,7 +150,8 @@ export const PostCard = ({ post }) => {
         >
           <CommentModal
             setShowCommentModal={setShowCommentModal}
-            postId={currentPost?._id}
+            post={currentPost}
+            currentUser={currentUser}
           />
         </div>
       ) : null}

@@ -1,11 +1,12 @@
 import {Routes,Route} from 'react-router-dom'
-import {HomePage ,LoginPage,SignUpPage,ProfilePage} from '../Pages'
+import {HomePage ,LoginPage,SignUpPage,ProfilePage,BookmarkPage,ExplorePage} from '../Pages'
 import { PrivateRoute } from './PrivateRoute'
 import React,{useEffect} from 'react'
 import { Navigate } from 'react-router-dom'
 import { ResetScroll } from './ResetScroll'
 import { useSelector } from 'react-redux'
 import { SinglePost } from '../features/post'
+
  export const MyRoutes=()=>{
     
     const {token}=useSelector((state)=>state.auth)
@@ -18,6 +19,8 @@ import { SinglePost } from '../features/post'
           <Route path="/" element={<HomePage />} />
           <Route path="/profile/:username" element={<ProfilePage />}/>
           <Route path="/post/:postId" element={<SinglePost />}/>
+          <Route path="/Bookmarks" element={<BookmarkPage />}/>
+          <Route path="/explore" element={<ExplorePage />}/>
 
         </Route>
         

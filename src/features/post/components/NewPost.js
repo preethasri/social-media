@@ -24,7 +24,7 @@ export const NewPost=()=>{
     }
 
     return(
-        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-[#f1f1f1] text-sm border-b border-primarybg px-4 py-3 cursor-text " onClick={(e)=>{
+        <div className="grid grid-cols-[2rem_1fr] gap-2 items-start  text-sm border-b border-primarybg px-4 py-3 cursor-text " onClick={(e)=>{
             e.stopPropagation() 
           focusInput(newPostRef)}}>
          <UserAvatar user={currentUser} />
@@ -33,7 +33,7 @@ export const NewPost=()=>{
           contentEditable="true" 
           placeholder="What's happening?" 
           className="w-full break-all outline-none mt-1.5 new_post" 
-          o onInput={(e) => setInput(e.currentTarget.textContent)} />
+           onInput={(e) => setInput(e.currentTarget.textContent)} />
               
              <div className="ml-auto flex-gap-2">
                  <button type="submit" 

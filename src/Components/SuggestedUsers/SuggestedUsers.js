@@ -2,6 +2,7 @@ import "./SuggestedUsers.css"
 import {useSelector,useDispatch} from 'react-redux'
 import { useNavigate } from "react-router-dom"
 import { UserAvatar } from "../UserAvatar/UserAvatar"
+import { followUser } from "../../features/user"
 
  const SuggestedUsers=()=>{
     const {token,user}=useSelector((state)=>state.auth)
@@ -10,7 +11,7 @@ import { UserAvatar } from "../UserAvatar/UserAvatar"
     const navigate=useNavigate();
     const userData=users?.find((dbUser)=>dbUser.username===user.username)
     const filteredUsers=users
-    ?.filter((dbUser)=>dbUser.username !==userData?.username)
+    ?.filter((dbUser)=>dbUser.username !== userData?.username)
     ?.filter((eachUser)=>!userData?.following.find((item)=>item.username===eachUser.username))
     
     
@@ -38,7 +39,10 @@ import { UserAvatar } from "../UserAvatar/UserAvatar"
                 <div>
                     
                     <div className="aside-item-btn">
-                        <button className="follow-btn" onClick={(e)=>{e.stopPropagation() }}>Follow
+                        <button className="follow-btn" onClick={(e)=>{
+                            e.stopPropagation() 
+                            dispatch(followUser({token,followUserId:user._id})
+                            )}}>Follow
 
                         </button>
 
