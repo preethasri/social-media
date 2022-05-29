@@ -1,70 +1,48 @@
-import { useSelector } from "react-redux";
+import { useState,useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { UserAvatar } from"../../../Components";
-import {CommentOptionModal} from '../../../features/post'
-import { getPostDate} from "../../../utils";
+import { UserAvatar } from "../../../Components";
+import { CommentOptionModal } from "../../../features/post";
+import { getPostDate } from "../../../utils";
+import { useSelector } from "react-redux";
 
-export const CommentCard=({comment,postId})=>{
-    const navigate=useNavigate()
+export const CommentCard = ({ comment, post }) => {
+  
+    const {users}=useSelector((state)=>state.user)
+    const {user}=useSelector((state)=>state.auth)
 
+    const currentUser=users?.find((user)=>user.username===post?.username)
+   const commentRef=useRef(null)
+   console.log(comment)
+  return (
+    <div className="border-b border-slate-400 px-4 py-3 text-black">
+    <div className="flex justify-between">
+        <div className="flex">
+            <UserAvatar username={comment.user} />
+            {post?.createdAt ? (
+                <span className="font-medium text-xs text-slate-800 dark:text-slate-100 mt-2">
+                    · {getPostDate(comment.createdAt)}
+                </span>
+            ) : null}
+        </div>
+        {username === comment.username ? (
+            <div className="relative" ref={commentRef}>
+                <button
+                    className="w-6 h-6 text-slate-800 dark:text-slate-300"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setCommentOptions((prev) => !prev);
+                    }}
+                >
+                    <span className="material-icons-outlined pointer-events-none">more_vert</span>
+                </button>
+                {showCommentOptions ? (
+                    <CommentOptionModal currentUser={currentUser} currentComment={comment} post={post} />
+                ) : null}
+            </div>
+        ) : null}
+    </div>
+    <div className="py-2 px-4 text-slate-900 dark:text-slate-100 break-all mt-2">{comment.comment}</div>
+</div>
     
-
-    const {username,firstName,createdAt,comment:commentText}=comment
-    const [showOptions,setShowOptions]=useState(false)
-     
-    const loggedInUser=user.username===username
-
-    return(
-       <div className="grid grid-cols-[2rem_1fr] gap-2 pt-3 border-b border-primarybg">
-         <div onClick={(e)=>{
-             e.stopPropagation()
-             navigate(`/profile/${username}`)
-             }}>
-               <UserAvatar user={comment} />
-         </div>
-         <div className="flex flex-col gap-1 break-all">
-             <div className="flex justify-between">
-                 <div className="flex items-start 2xl:items-center gap-1 cursor-pointer"
-                  onClick={(e)=>{
-                      e.stopPropagation()
-                      navigate(`/profile/${username}`)
-                  }}
-                 >
-                     <div className="flex flex-col gap-0 2xl:flex-row 2xl:gap-1">
-                         <span className="font-bold tracking-wide">{firstName}</span>
-                         <span className="text-gray-600">@{username}</span>
-                     </div>
-                        <span className="text-gray-600">.</span>
-                        <div className="text-gary-600">{getPostDate(createdAt)}</div>
-                 </div>
-                 
-                     <div className="relative">
-                          <i className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-primarybg rounded-full" 
-                          onClick={(e)=>{
-                              e.stopPropagation()
-                              setShowOptions((prev)=>!prev) }}></i>
-
-                        
-                            {showOptions ?(
-                                  <CommentOptionModal comment={comment} postId={postId} setShowOptions={setShowOptions} />
-                                  ):null}
-                                  </div>
-                        
-                              </div>
-                              <div>{commentText}</div>
-    
-                       </div>
-                       </div>
-    
-    
-    )
-
-
-
-
-
-
-
-
-}
+  );
+};

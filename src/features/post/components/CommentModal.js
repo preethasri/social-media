@@ -5,40 +5,39 @@ import { UserAvatar } from "../../../Components";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 export const CommentModal = ({
-  commentExists,
-  setShowCommentModal,
-  postId,
+   post,
+   setShowCommentModal,
+   currentUser,
+   currentComment,
 }) => {
   const { user, token } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
-  const [comment, setComment] = useState("");
+ 
+  const [comment, setComment] = useState(currentComment?currentComment.comment:"");
+  const commentRef = useRef(null);
+  const modalRef = useRef(null);
 
   const loggedInUser = users.find(
     (dbUser) => dbUser.username === user.username
   );
 
-  const commentRef = useRef();
-  const modalRef = useRef();
-
-  const commentId = commentExists?._id;
-
+console.log(post)
   const addCommentHandler = (e) => {
     e.preventDefault();
+    if(comment.trim()){
+      dispatch(editComment({token,postId:post.id,commentData:{...currentComment,comment}}))
+    }else{
+      dispatch(addComment({token,postId:post.id,commentData:{comment}}))
+    }
+    setComment("")
+    setShowCommentModal(false)
 
-    commentExists
-      ? dispatch(
-          editComment({ token, commentData: { comment }, postId, commentId })
-        )
-      : dispatch(addComment({ token, commentData: { comment }, postId }));
-
-    setShowCommentModal(false);
   };
-
+  
   useEffect(() => {
-    if (commentExists) commentRef.current.innerText = commentExists.comment;
-  }, [commentExists]);
+     commentRef.current.innerText = comment;
+  }, [comment]);
 
   useOnClickOutside(modalRef, setShowCommentModal);
 
@@ -53,9 +52,9 @@ export const CommentModal = ({
         <div
           role="textbox"
           ref={commentRef}
-          contentEditable="true"
+          contentEditable={true}
           placeholder="Post your reply"
-          className="w-full break-all bg-inherit outline-none mt-1.5"
+          className="w-full break-all bg-inherit outline-none mt-1.5 text-black"
           onInput={(e) => setComment(e.currentTarget.textContent)}
         />
 
@@ -71,12 +70,9 @@ export const CommentModal = ({
           <button
             type="submit"
             className="bg-primary rounded-full py-1 px-3 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={
-              !comment.trim() ||
-              (commentExists && comment.trim() === commentExists.comment)
-            }
+            
           >
-            {commentExists ? "Save" : "Reply"}
+           Comment
           </button>
         </div>
       </form>

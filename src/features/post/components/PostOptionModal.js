@@ -68,7 +68,7 @@ export const PostOptionModal=({post,setShowOptions})=>{
 
         )}
         {showNewPostModal ?(
-            <div className="bg-[#f1f1f1] top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default b-solid primary "
+            <div className="top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default "
             onClick={(e)=>e.stopPropagation()}
             >
                <PostModal post={post} setShowOptions={setShowOptions} setShowNewPostModal={setShowNewPostModal}/>

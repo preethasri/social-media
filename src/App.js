@@ -6,7 +6,7 @@ function App() {
     
   return(
     <>
-   <div className="bg-[#f1f1f1]">
+   <div>
     <MyRoutes />
     </div>
     </>
