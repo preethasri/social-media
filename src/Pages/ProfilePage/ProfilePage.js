@@ -27,7 +27,7 @@ export const ProfilePage=()=>{
             <h1 className="text-bold px-4 py-2 sticky top:0 backdrop-blur-sm z-10 border-b border-darkGrey flex items-center rounded-full text-primary-900">
               <i className="fa-solid fa-arrow-left mr-4 cursor-pointer" onClick={()=>navigate(-1)}> </i>
               <span>
-                  <p className="font-bold tracking-wide text-black">{currentUser?.fullName}</p>
+                  <p className="font-bold tracking-wide text-black">{currentUser?.firstName}</p>
                   <p className="text-sm text-black">
                       {currentUserPosts?.length}posts
 

@@ -8,17 +8,17 @@ export const getBookmarkService = (token) => {
     headers: { authorization: token },
   });
 };
-export const addBookmarkService = ({ token, _id }) => {
+export const addBookmarkService = ({ token, postId }) => {
   return axios.post(
-    `/api/users/bookmark/${_id}`,
+    `/api/users/bookmark/${postId}`,
     {},
     { headers: { authorization: token } }
   );
 };
 
-export const removeBookmarkService = ({ token, _id }) => {
+export const removeBookmarkService = ({ token, postId }) => {
   return axios.post(
-    `/api/users/remove-bookmark/${_id}`,
+    `/api/users/remove-bookmark/${postId}`,
     {},
     { headers: { authorization: token } }
   );

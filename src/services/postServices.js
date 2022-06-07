@@ -64,7 +64,7 @@ const addCommentService = ({ postId, commentData, token }) => {
   );
 };
 
-const editCommentService = ({ token, commentData, postId, commentId }) => {
+const editCommentService = ({ token,postId,commentData, commentId }) => {
   return axios.post(
     `/api/comments/edit/${postId}/${commentId}`,
     { commentData },

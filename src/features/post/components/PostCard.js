@@ -29,6 +29,8 @@ export const PostCard = ({ post }) => {
   const { _id, username, fullName, content, id, likes, createdAt } =
     currentPost;
 
+  
+  
     const currentUser = users?.find(
       (dbUser) => dbUser.username === post.username
     );
@@ -113,27 +115,36 @@ export const PostCard = ({ post }) => {
           <div>
             <button
               className="cursor-pointer hover:bg-dark hover:rounded-full"
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowCommentModal(true);
-              }}
+            
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowCommentModal(true)
+                }}
+              
             >
               <i className="fa-regular fa-message p-2"></i>
             </button>
-            {currentPost.comments > 0 && (
-              <span className="ml-1">{currentPost.comments.length}</span>
-            )}
+            {currentPost?.comments.length >0 &&(
+                                       <span className='ml-1'>{currentPost?.comments.length}</span>
+                                   )}
+            
           </div>
 
           <button
             className="cursor-pointer hover:bg-dark hover:rounded-full"
             onClick={(e) => {
               e.stopPropagation();
-              PostInBookmarks(bookmarks, _id)
-                
-                ? dispatch(removeBookmark({ token, _id }))
-                : dispatch(addBookmark({ token, _id }));
-            }}
+            
+               PostInBookmarks(bookmarks, _id)
+              ?dispatch(
+               
+               removeBookmark({ token, postId:_id })
+              )
+              
+              :dispatch(
+                 addBookmark({ token, postId:_id })
+                )
+          }}
           >
             
              <i className={`fa-bookmark p-2 ${PostInBookmarks(bookmarks,_id)?"fa-solid text-primary ":"fa-regular"}`}></i>

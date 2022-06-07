@@ -37,16 +37,16 @@ export const SinglePost=()=>{
    const newCommentRef=useRef();
    const currentPost=posts.find((post)=>post.id===postId)
    const currentUser=users?.find((dbUser)=>dbUser.username===currentPost?.username)
-  console.log(comment)
+ 
    const loggedInUser=users.find((dbUser)=>dbUser.username===user.username)
 
-//    useEffect(()=>{
-//        dispatch(getSinglePost(postId))
-//        dispatch(getAllUsers())
-//       return ()=>dispatch(resetSinglePost())
-//    },[posts,postId,dispatch])
-//    useOnClickOutside(postRef,setShowOptions)
-//    console.log(currentPost)
+   useEffect(()=>{
+       dispatch(getSinglePost(postId))
+       dispatch(getAllUsers())
+      return ()=>dispatch(resetSinglePost())
+   },[posts,postId,dispatch])
+   useOnClickOutside(postRef,setShowOptions)
+  
 
 function commentSubmitHandler(e) {
     e.preventDefault();
@@ -100,9 +100,10 @@ function commentSubmitHandler(e) {
                                     </div>
                                     <div className='relative'>
                                         <i className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-primarybg rounded-full" 
-                                        onClick={()=>{
+                                        onClick={(e)=>{
                                             setShowOptions((prev)=>!prev)
                                             e.stopPropagation()
+                                            
                                         }}></i>
                                         {
                                             showOptions ?(
@@ -140,7 +141,11 @@ function commentSubmitHandler(e) {
                                         :dispatch(likePost({token,_id:currentPost._id}))
                                     }}
                                    >
-                                       <i className={`fa-heart p-2 ${LikedByLoggedUser(currentPost,user)}?"fa-solid text-red" :"fa-regular" }`}></i>
+                                        <i className={` fa-heart p-2 ${ LikedByLoggedUser(currentPost, user)
+                                         ? "fa-solid text-red"
+                                        : "fa-regular"
+                }`}
+              ></i>
 
 
                                    </button>
@@ -163,10 +168,10 @@ function commentSubmitHandler(e) {
                                     onClick={() => {
                                         PostInBookmarks(bookmarks, currentPost?._id)
                                           ? dispatch(
-                                              removeBookmark({ token, _id: currentPost?._id })
+                                              removeBookmark({ token, postId: currentPost?._id })
                                             )
                                           : dispatch(
-                                              addBookmark({ token, _id: currentPost?._id })
+                                              addBookmark({ token, postId: currentPost?._id })
                                             );
                                       }}
                                     >
@@ -201,7 +206,7 @@ function commentSubmitHandler(e) {
                            {currentPost?.comments ?
                             [...currentPost?.comments] ?.reverse()
                             .map((comment)=>(
-                                <CommentCard comment={comment} key={comment._id} currentPost={currentPost}/>
+                                <CommentCard comment={comment} key={comment._id} post={currentPost}/>
                             )):null
                         }
                         </div>):(

@@ -45,9 +45,9 @@ export const addBookmark = createAsyncThunk(
   async (arg, { rejectWithValue }) => {
     try {
       const { data, status } = await addBookmarkService(arg);
-
+      console.log(data)
       if (status === 200) {
-        console.log(data.bookmarks)
+        
         toast.success("Post added to bookmark");
         return data.bookmarks;
       }
@@ -62,13 +62,15 @@ export const removeBookmark = createAsyncThunk(
   async (arg, { rejectWithValue }) => {
     try {
       const { data, status } = await removeBookmarkService(arg);
-
+      console.log("hii")
       if (status === 200) {
         toast.success("Post removed from bookmark");
         return data.bookmarks;
       }
-    } catch {
-      return rejectWithValue([], "Error occured. Try again later.");
+      
+    } 
+    catch(err) {
+      console.log(err)
     }
   }
 );
