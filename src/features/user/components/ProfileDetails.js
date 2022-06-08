@@ -21,24 +21,25 @@ export const ProfileDetails=({currentUser})=>{
     })
    const authUser=users.find((dbUser)=>dbUser.username===user.username)
 
-   const {id,username,firstName,website="",bio="",following,followers}=currentUser
+   const {id,username,fullName,website="",bio="",following,followers}=currentUser
 
    const userAlreadyFollowing=followers?.find((follower)=>follower.username===authUser.username)
-   const currentUserInitials = `${
-    currentUser?.firstName ? currentUser?.firstName[0].toUpperCase() : ""
-  } `
+   
    return(
        <div className="profile-details p-4 grid sm:grid-cols-[7rem-1fr] gap-3 border-b border-primarybg">
            {isLoading ? <Loader /> 
-           : <UserAvatar user={currentUser} />
+             
+           : 
+           <UserAvatar user={currentUser} />
+
            
            }
 
            <div className="flex flex-col grow gap-3 ">
                <div>
                    <div className="flex justify-between items-start w-full">
-                       <div className="flex flex-col">
-                       <span className="font-bold text-xl">{firstName}</span>
+                       <div className="flex flex-col mt-2">
+                       <span className="font-bold text-xl">{fullName}</span>
                        <span className="text-sm text-black">@{username}</span>
                      </div>
                      <div className="flex items-center flex-col sm:flex-row gap-2">

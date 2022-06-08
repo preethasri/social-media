@@ -1,7 +1,7 @@
 import {useSelector,useDispatch} from 'react-redux'
 import {useState,useEffect,useRef} from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
-import {Loader,Sidebar,SuggestedUsers,UserAvatar} from '../../../Components'
+import {Loader,Sidebar,SuggestedUsers,UserAvatar,BottomNav} from '../../../Components'
 import { PostOptionModal,
        likePost,
        dislikePost,
@@ -57,7 +57,9 @@ function commentSubmitHandler(e) {
 }
 
    return(
-       <div className='grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-100% lg:[w-80%] mb-16 sm:m-auto'>
+       
+       <div 
+       className=' grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto'>
            <Sidebar />
            <div className='sm:border-x border-[#f1f1f1]'>
                <h1 className="text-bold p-4 sticky top-0 bg-primary text-white backdrop-blur-sm z-10">
@@ -68,7 +70,7 @@ function commentSubmitHandler(e) {
                    {isLoading ?(
                        <Loader />
                    ):currentPost?(
-                       <div className='flex flex-col gap-2 text-sm border-b border-grey px-4 py-3 break-all' ref={postRef}>
+                       <div className='flex flex-col gap-2 text-sm border-b  px-4 py-3 break-all' ref={postRef}>
                            <div className='grid grid-cols-[2rem_1fr]gap-2'>
                                <div className='cursor-pointer'
                                  onClick={(e)=>{
@@ -122,7 +124,7 @@ function commentSubmitHandler(e) {
 
                            {
                                currentPost?.likes.likeCount >0?(
-                               <button className='border-b border-primarybg text-left pt-2 mt-2 cursor-pointer ' 
+                               <button className='border-b border-slate-300 text-left pt-2 mt-2 cursor-pointer ' 
                                onClick={()=>{setShowLikesModal(true)}}
                                >
                                <span className='text-bold'>
@@ -132,7 +134,7 @@ function commentSubmitHandler(e) {
                                </button>
 
                            ):null}
-                           <div className='flex justify-evenly gap-6 pt-1 mt-1 -mb-1 border-b border-primarybg'>
+                           <div className='flex justify-evenly gap-6 pt-1 mt-1 -mb-1 border-b border-[#f1f1f1]'>
                                <div>
                                    <button className='cursor-pointer rounded-full '
                                     onClick={()=>{
@@ -186,7 +188,7 @@ function commentSubmitHandler(e) {
                                </div>
 
                            </div>
-                           <div className='grid grid-cols-[2rem_1fr] gap-2 pt-3 border-b border-primarybg'>
+                           <div className='grid grid-cols-[2rem_1fr] gap-2 pt-3 border-b border-slate-300'>
                                <UserAvatar user={loggedInUser} />
                                 <form className='flex justify-between' 
                                 onSubmit={commentSubmitHandler}>
@@ -229,7 +231,9 @@ function commentSubmitHandler(e) {
                <SuggestedUsers />
 
            </div>
-
+          
+       
+       <BottomNav />
        </div>
       
    )

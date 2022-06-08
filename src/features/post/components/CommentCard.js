@@ -12,18 +12,33 @@ export const CommentCard = ({ comment, post }) => {
    const [showCommentOptions,setCommentOptions]=useState(false)
     const currentUser=users?.find((user)=>user.username===post?.username)
    const commentRef=useRef(null)
-   
+   const navigate=useNavigate()
   return (
-    <div className="border-b border-slate-400 px-4 py-3 text-black">
+    <div className="border-slate-300 border-b px-4 py-3 text-black grid grid-cols-[2rem_1fr] gap-2 pt-3 ">
+    <div onClick={(e)=>{
+        e.stopPropagation()
+        navigate(`/profile/${username}`)
+
+    }}>
+          <UserAvatar user={comment} />
+
+    </div>
+    <div className="flex flex-col gap-1 break-all">
     <div className="flex justify-between">
-        <div className="flex">
-            <UserAvatar username={comment.user} />
-            {post?.createdAt ? (
-                <span className="font-medium text-xs text-slate-800 dark:text-slate-100 mt-2">
-                    · {getPostDate(comment.createdAt)}
-                </span>
-            ) : null}
-        </div>
+        <div 
+        className="flex items-start 2xl:items-center gap-1 cursor-pointer"
+        onClick={(e)=>{
+            e.stopPropagation()
+            navigate(`/profile/${username}`)
+        }}
+        >
+         <div className="flex flex-col gap-0 2xl:flex-row 2xl:gap-1">
+              <span className="font-bold tracking-wide">{comment.fullName}</span>
+              <span className="text-grey">@{comment.username}</span>
+            </div>
+            <span className="text-grey">·</span>
+            <div className="text-grey">{getPostDate(comment.createdAt)}</div>
+          </div>
         {user.username === comment.username ? (
             <div className="relative" ref={commentRef}>
                 <button
@@ -42,6 +57,7 @@ export const CommentCard = ({ comment, post }) => {
         ) : null}
     </div>
     <div className="py-2 px-4 text-slate-900 dark:text-slate-100 break-all mt-2">{comment.comment}</div>
+   </div>
 </div>
     
   );
