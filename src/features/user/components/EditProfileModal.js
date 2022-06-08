@@ -41,7 +41,7 @@ export const EditProfileModal=({setEditModal})=>{
                     editInput:{
                         ...currentUser,
                         ...editInput,
-                        profileUrl:data.url,
+                        profileAvatar:data.url,
                     },
                     token,
                 })
@@ -92,7 +92,7 @@ export const EditProfileModal=({setEditModal})=>{
                     }} />
                     <UserAvatar user={image ?{
                       ...currentUser,
-                    profileUrl:URL.createObjectURL(image),
+                    profileAvatar:URL.createObjectURL(image),
                 }
                 :currentUser
             } />
