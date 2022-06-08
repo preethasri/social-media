@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CommentModal } from "./CommentModal";
-import { deleteComment } from "../../../features/post";
+import { deleteComment ,editComment} from "../../../features/post";
+import { useParams } from "react-router-dom";
+import { editPostCommentHandler } from "../../../backend/controllers/CommentController";
 
 export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
   const [showCommentModal, setShowCommentModal] = useState(false);
@@ -9,9 +11,10 @@ export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
   const dispatch = useDispatch();
   const { token, user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.user);
-
   
-
+  const [comment,setComment]=useState(currentComment?currentComment.comment:"")
+  
+  
   return (
     <div className="flex flex-col   absolute right-1.5 w-max rounded "
      onClick={(e)=>e.stopPropagation()}
@@ -20,10 +23,12 @@ export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
         <>
           <button
             className="py-2 px-4 text-left cursor-pointer "
-            onClick={(e) => {
-              e.stopPropagation();
-              setShowCommentModal((prev)=>!prev);
-            }}
+            onClick={
+             (e)=>{
+               e.stopPropagation()
+               setShowCommentModal(true)
+             }
+            }
           >
             <i className="fa-solid fa-pen-to-square mr-2"></i>Edit
           </button>
@@ -32,7 +37,7 @@ export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
             onClick={(e) => {
               e.stopPropagation();
               dispatch(
-                deleteComment({ coomentId:currentComment._id,postId:post._id,token })
+                deleteComment({ commentId:currentComment._id,postId:post._id,token })
               );
             }}
           >

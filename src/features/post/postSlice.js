@@ -131,8 +131,10 @@ export const addComment = createAsyncThunk(
       if (status === 201) {
         return data.posts;
       }
-    } catch {
-      return rejectWithValue([], "Oops...Error occured.");
+    } catch(err) {
+     
+      return rejectWithValue([], "Oops...Error occured.",);
+     
     }
   }
 );
@@ -146,7 +148,8 @@ export const editComment = createAsyncThunk(
       if (status === 201) {
         return data.posts;
       }
-    } catch {
+    } catch(err) {
+     
       return rejectWithValue([], "Oops...Error occured. ");
     }
   }

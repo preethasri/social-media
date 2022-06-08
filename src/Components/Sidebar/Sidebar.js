@@ -16,7 +16,7 @@ export const Sidebar=()=>{
     const {users}=useSelector((state)=>state.user)
 
     const currentUser=users.find((dbUser)=>dbUser.username===user.username)
-
+    
     const [showNewPostModal,setShowNewPostModal]=useState(false)
     const dispatch=useDispatch()
 
@@ -53,7 +53,7 @@ export const Sidebar=()=>{
         <NavLink to={`/profile/${currentUser?.username}`} style={({isActive })=>(isActive ?activeStyle :undefined)}>
         <div className="sidebar-items">
         <UserAvatar user={currentUser}  />
-        <h2>{currentUser?.fullName}</h2>
+        <h2>{currentUser?.firstName}</h2>
         </div>
         </NavLink>
         <div className="sidebar-items">

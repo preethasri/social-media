@@ -9,10 +9,10 @@ export const CommentCard = ({ comment, post }) => {
   
     const {users}=useSelector((state)=>state.user)
     const {user}=useSelector((state)=>state.auth)
-
+   const [showCommentOptions,setCommentOptions]=useState(false)
     const currentUser=users?.find((user)=>user.username===post?.username)
    const commentRef=useRef(null)
-   console.log(comment)
+   
   return (
     <div className="border-b border-slate-400 px-4 py-3 text-black">
     <div className="flex justify-between">
@@ -24,7 +24,7 @@ export const CommentCard = ({ comment, post }) => {
                 </span>
             ) : null}
         </div>
-        {username === comment.username ? (
+        {user.username === comment.username ? (
             <div className="relative" ref={commentRef}>
                 <button
                     className="w-6 h-6 text-slate-800 dark:text-slate-300"
