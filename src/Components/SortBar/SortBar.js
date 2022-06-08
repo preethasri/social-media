@@ -23,7 +23,7 @@ export const SortBar=()=>{
                  <i className='fa-solid fa-sliders'></i>
                 </button>
                 {showSortModal ?(
-                    <div className='absolute right-0 w-max text-sm flex flex-col gap-1.5 items-start py-2 px-3 rounded z-10 border border=primarybg'>
+                    <div className='absolute right-0 w-max text-sm flex flex-col gap-1.5 items-start py-2 px-3 rounded z-40 border border-primarybg bg-[#f1f1f1]'>
                         <button onClick={()=>{dispatch(setActiveSort("Trending"))
                         setShowSortModal(false)
                     }}>

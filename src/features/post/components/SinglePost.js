@@ -67,11 +67,9 @@ function commentSubmitHandler(e) {
                  Post
                </h1>
                <div>
-                   {isLoading ?(
-                       <Loader />
-                   ):currentPost?(
-                       <div className='flex flex-col gap-2 text-sm border-b  px-4 py-3 break-all' ref={postRef}>
-                           <div className='grid grid-cols-[2rem_1fr]gap-2'>
+               {currentPost?(
+                       <div className='flex flex-col gap-2 text-sm   px-4 py-3 break-all' ref={postRef}>
+                           <div className='grid grid-cols-[2rem_1fr] gap-2'>
                                <div className='cursor-pointer'
                                  onClick={(e)=>{
                                      e.stopPropagation()
@@ -83,12 +81,12 @@ function commentSubmitHandler(e) {
 
                            
                            <div className='flex flex-col gap-2'>
-                                <div className='fex justify-between'>
+                                <div className='flex justify-between'>
                                     <div className='flex gap-2' onClick={(e)=>{
                                         e.stopPropagation();
                                         navigate(`/profile/${currentPost?.username}`)
                                     }}>
-                                     <div className='flex flex-col cursor-pointer' >
+                                     <div className='flex flex-col cursor-pointer 2xl:flex-row 2xl:gap-1' >
                                          <span className='font-bold tracking-wide'>
                                             {currentPost?.fullName}
                                          </span>
@@ -199,7 +197,7 @@ function commentSubmitHandler(e) {
                                         className='outline-none w-full bg-inherit' 
                                          value={comment} 
                                          onChange={(e)=>setComment(e.target.value)}/>
-                                        <button className='bg-primarybg rounded-full py-1 px-3 ml-4 disabled:opacity-50 disabled:cursor-not-allowed w-[5.2rem]' 
+                                        <button className='bg-primarybg rounded-full py-1 px-3 ml-4 mt-3 disabled:opacity-50 disabled:cursor-not-allowed w-[5.2rem] h-[3rem]' 
                                         disabled={!comment.trim()} 
                                         type="submit" > Reply </button>
                                         </form>
@@ -227,7 +225,7 @@ function commentSubmitHandler(e) {
                ):null}
 
            </div>
-           <div className='hidded xl:block'>
+           <div className='hidden xl:block'>
                <SuggestedUsers />
 
            </div>

@@ -16,7 +16,7 @@ export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
   
   
   return (
-    <div className="flex flex-col   absolute right-1.5 w-max rounded "
+    <div className="flex flex-col bg-[#f1f1f1] absolute right-1.5 w-max rounded shadow-dark shadow-lg border border-primarybg "
      onClick={(e)=>e.stopPropagation()}
     >
     
@@ -48,14 +48,16 @@ export const CommentOptionModal = ({ currentUser,currentComment,post }) => {
       
 
       {showCommentModal ? (
-        
+         <div className="top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default "
+         onClick={(e)=>e.stopPropagation()}
+         >
           <CommentModal
            post={post}
            currentUser={currentUser}
            currentComment={currentComment}
             setShowCommentModal={setShowCommentModal}
           />
-        
+        </div>
       ) : null}
     </div>
   );
