@@ -22,7 +22,7 @@
     padding: 1rem;
     background-color: var(--primary-color);
     border-radius: 5px;
-    color: white;
+    color: black;
     cursor:pointer;
 }
 .error{
@@ -39,8 +39,13 @@
     padding: 1rem;
     border: none;
     background-color: var(--secondary-color);
-    color: white;
+    color: black;
     border-radius: 5px;
+    
+    
+}
+.sign-up-form input {
+    color:black;
     
 }
 .sign-up.btn-disabled{

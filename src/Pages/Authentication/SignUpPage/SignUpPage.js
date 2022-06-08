@@ -58,18 +58,18 @@ const SignUpPage=()=>{
             <div className="sign-up-form">
                 
                
-                <label for="firstName">Name
+                <label for="fullName">Name
         <input type="text"
         placeholder="enter your name" 
         required
-        name='firstName' 
+        name='fullName' 
         onChange={signUpInputHandler} 
-        value={signup.input.firstName || ""}
+        value={signup.input.fullName || ""}
          />
        </label>
          
                
-       <label for="username">Name
+       <label for="username">userName
         <input type="text"
         placeholder="enter your user name" 
         required

@@ -21,21 +21,22 @@ export const CommentModal = ({
   const loggedInUser = users.find(
     (dbUser) => dbUser.username === user.username
   );
+  console.log(loggedInUser.username)
   const commentId = currentComment?._id;
 
   const addCommentHandler = (e) => {
     e.preventDefault();
-
-    if(comment.trim()){
-      if(currentComment._id){
-      dispatch(editComment({token,postId:post._id,commentData:{...currentComment,comment},commentId}))
-      }
-    else{
+    console.log("working")
     
-        dispatch(addComment({token,postId:post._id,commentData:{comment}}))
-    }
-  }
-    setComment("")
+     currentComment
+     ?dispatch(editComment({token,postId:post._id,commentData:{comment},commentId: currentComment?._id}))
+      
+    
+    
+      :dispatch(addComment({token,postId:post._id,commentData:{comment}}))
+    
+  
+    
     setShowCommentModal(false)
 
   };
@@ -59,13 +60,12 @@ export const CommentModal = ({
         <div
           role="textbox"
           ref={commentRef}
-          contentEditable
+          contentEditable="true"
           placeholder="Post your reply"
           className="w-full bg-inherit outline-none mt-1.5 text-black; "
-          onInput={(e) => {
-            setComment(e.currentTarget.textContent)
+          onInput={(e) => setComment(e.currentTarget.textContent)
             
-          }}
+          }
         />
 
         <div className="ml-auto flex gap-2">
@@ -80,15 +80,9 @@ export const CommentModal = ({
           <button
             type="submit"
             className="bg-primary rounded-full py-1 px-3 disabled:opacity-50 disabled:cursor-not-allowed"
-            onClick={(e)=>{
-              e.stopPropagation()
-              dispatch(addComment({token,postId:post._id,commentData:{comment}}))
-              setComment("")
-               setShowCommentModal(false)
-            }}
-            
-          >
-           Comment
+            disabled={!comment.trim() || (currentComment && comment.trim()===currentComment.comment)}
+            >
+           {currentComment ?"Save":"Reply"}
           </button>
         </div>
       </form>

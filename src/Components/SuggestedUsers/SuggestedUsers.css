@@ -1,7 +1,4 @@
-.aside-container{
-    flex:0.3;
 
-}
 .aside-input{
     display: flex;
     align-items:center;
@@ -19,41 +16,26 @@
 .aside-input .aside-search{
     color:gray;
 }
- .aside-items{
-     margin-top:15px;
-     margin-left: 20px;
-     padding:20px;
-     background-color: #f5f8fa;
-     border-radius:20px;
-     
-     
-
-}
+ 
 .aside .aside-header{
     font-size: 18px;
     font-weight: 800;
     margin-top: 5px;
 }
-.aside-item{
-    display:flex;
-    justify-content:space-between;
-    padding:10px;
-}
+
 .aside-item-headerSpecial{
     color:gray;
     font-size: 12px;
     font-weight:600;
 }
-.aside-item-headerText h3{
-    font-size: 15px;
-    margin-bottom: 10px;
+.aside-item-headerText {
+    display: flex;
+    flex-direction: column;
     
     
     
 }
-.aside-item-btn{
-    margin-left: 3rem;
-}
+
 .follow-btn{
     border:none;
     border-radius: 30px;

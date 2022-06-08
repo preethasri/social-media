@@ -24,10 +24,24 @@ export const SortBar=()=>{
                 </button>
                 {showSortModal ?(
                     <div className='absolute right-0 w-max text-sm flex flex-col gap-1.5 items-start py-2 px-3 rounded z-10 border border=primarybg'>
-                        <button onClick={()=>{dispatch(setActiveSort("Latest"))}}>
+                        <button onClick={()=>{dispatch(setActiveSort("Trending"))
+                        setShowSortModal(false)
+                    }}>
+                        <i className="fa-solid fa-arrow-trend-up pr-2"></i>Trending
+
+                        </button>
+                        <button onClick={()=>{
+                            dispatch(setActiveSort("Latest"))
+                            setShowSortModal(false)
+                            
+                            }}>
                            <i className='fa-solid fa-arrow-up pr-2'></i>Latest
                         </button>
-                        <button onClick={()=>{dispatch(setActiveSort("Oldest"))}}>
+                        <button onClick={()=>
+                            {dispatch(setActiveSort("Oldest"))
+                             setShowSortModal(false)
+                            
+                            }}>
                            <i className='fa-solid fa-arrow-down pr-2'></i>Oldest
                         </button>
 

@@ -22,7 +22,7 @@ export const Sidebar=()=>{
 
     return(
         <>
-        <div className='sidebar-container'>
+        <div className='sidebar-container fixed-top'>
         <div className='brand'>
             <Link to="/" className='link-tag'>
           
@@ -53,7 +53,7 @@ export const Sidebar=()=>{
         <NavLink to={`/profile/${currentUser?.username}`} style={({isActive })=>(isActive ?activeStyle :undefined)}>
         <div className="sidebar-items">
         <UserAvatar user={currentUser}  />
-        <h2>{currentUser?.firstName}</h2>
+        <h2>{currentUser?.fullName}</h2>
         </div>
         </NavLink>
         <div className="sidebar-items">

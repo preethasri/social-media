@@ -10,7 +10,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -25,14 +25,14 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
     username: "preetha",
-    createdAt: formatDate(),
+    createdAt:"2022-04-21",
     updatedAt: formatDate(),
     comments: [
       {
@@ -40,7 +40,7 @@ export const posts = [
         comment: "nice work",
         username: "preetha",
         fullName: "Preetha Srninvasan",
-        profileUrl:
+        profileAvatar:
           "https://res.cloudinary.com/preetha/image/upload/v1652684031/connect/girlpic3_sl9tmn.jpg",
         createdAt: formatDate(),
         updatedAt: formatDate(),
@@ -54,7 +54,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 2,
       likedBy: [
@@ -62,7 +62,7 @@ export const posts = [
           _id: uuid(),
           fullName: "Preetha Srinivasan",
           username: "preetha",
-          profileUrl:
+          profileAvatar:
             "https://res.cloudinary.com/preetha/image/upload/v1652684031/connect/girlpic3_sl9tmn.jpg",
         },
         {
@@ -77,7 +77,7 @@ export const posts = [
     },
     username: "swetha",
     fullName:"Swetha Srinivasan",
-    createdAt: formatDate(),
+    createdAt: "2021-05-23",
     updatedAt: formatDate(),
     comments: [
       {
@@ -85,7 +85,7 @@ export const posts = [
         comment: "good morning",
         username: "adarshbalika",
         fullName: "Adarsh Balika",
-        profileUrl:
+        profileAvatar:
           "https://res.cloudinary.com/preetha/image/upload/v1652684006/connect/girlpic2_nxes45.jpg",
         createdAt: formatDate(),
         updatedAt: formatDate(),
@@ -98,7 +98,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -106,14 +106,14 @@ export const posts = [
     },
     username: "tanay",
     fullName:"Tanay Pratap",
-    createdAt: formatDate(),
+    createdAt: "2020-07-16",
     updatedAt: formatDate(),
     comments:[]
   },
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -129,9 +129,9 @@ export const posts = [
         comment: "hey there...",
         username: "tanay",
         fullName: "Tanay Pratap",
-        profileUrl:
+        profileAvatar:
           "https://res.cloudinary.com/preetha/image/upload/v1652684039/connect/girlpic5_dpyova.jpg",
-        createdAt: formatDate(),
+        createdAt: "2022-01-17",
         updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
@@ -142,7 +142,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -150,8 +150,37 @@ export const posts = [
     },
     username: "adarshbalika",
     fullName:"Adarsh Balika",
-    createdAt: formatDate(),
+    createdAt: "2022-03-09",
     updatedAt: formatDate(),
     comments:[]
+  },
+  {
+    _id: uuid(),
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+    likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "preetha",
+    createdAt:"2021-04-21",
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        comment: "nice work",
+        username: "preetha",
+        fullName: "Preetha Srninvasan",
+        profileAvatar:
+          "https://res.cloudinary.com/preetha/image/upload/v1652684031/connect/girlpic3_sl9tmn.jpg",
+        createdAt: "2021-09-10",
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      }
+    ]
   },
 ];

@@ -19,7 +19,7 @@ export const users = [
     updatedAt: formatDate(),
     bio:"Aspiring FrontEnd Developer",
     website:"https://adarshbalika.netlify.app/",
-    profileUrl:"https://res.cloudinary.com/preetha/image/upload/v1652684006/connect/girlpic2_nxes45.jpg",
+    profileAvatar:"https://res.cloudinary.com/preetha/image/upload/v1652684006/connect/girlpic2_nxes45.jpg",
     following: [
       { _id: uuid(), fullName: "Preetha Srinivasan", username: "preetha" },
       { _id: uuid(), fullName: "swetha Srinivasan", username: "swetha" },
@@ -41,7 +41,7 @@ export const users = [
     updatedAt: formatDate(),
     bio:"learning FrontEnd @neogcamp",
     website:"https://homepreetha.netlify.app/",
-    profileUrl:"https://res.cloudinary.com/preetha/image/upload/v1652684031/connect/girlpic3_sl9tmn.jpg",
+    profileAvatar:"https://res.cloudinary.com/preetha/image/upload/v1652684031/connect/girlpic3_sl9tmn.jpg",
     following: [
       { _id: uuid(), fullName: "Adarsh Balika", username: "adarshbalika" },
       { _id: uuid(), fullName: "Swetha Srinivasan", username: "swetha" },
@@ -64,7 +64,7 @@ export const users = [
     updatedAt: formatDate(),
     bio:"Fixing Education",
     website:"https://twitter.com/invactHQ",
-    profileUrl:"https://res.cloudinary.com/preetha/image/upload/v1652684039/connect/girlpic5_dpyova.jpg",
+    profileAvatar:"https://res.cloudinary.com/preetha/image/upload/v1652684039/connect/girlpic5_dpyova.jpg",
     following: [
       { _id: uuid(), fullName: "Adarsh Balika", username: "adarshbalika" },
       { _id: uuid(), fullName: "Swetha Srinivasan", username: "swetha" },
@@ -86,7 +86,7 @@ export const users = [
     updatedAt: formatDate(),
     bio:"system Engineer@cognizant",
     
-    profileUrl:"https://res.cloudinary.com/preetha/image/upload/v1652684041/connect/girlpic6_sey5om.jpg",
+    profileAvatar:"https://res.cloudinary.com/preetha/image/upload/v1652684041/connect/girlpic6_sey5om.jpg",
     following: [
       { _id: uuid(), fullName: "Adarsh Balika", username: "adarshbalika" },
       { _id: uuid(), fullName: "Swetha Srinivasan", username: "swetha" },
@@ -107,7 +107,7 @@ export const users = [
     updatedAt: formatDate(),
     bio:"system Engineer@TCS",
     
-    profileUrl:"https://res.cloudinary.com/preetha/image/upload/v1652684041/connect/girlpic6_sey5om.jpg",
+    profileAvatar:"https://res.cloudinary.com/preetha/image/upload/v1652684041/connect/girlpic6_sey5om.jpg",
     following: [
       { _id: uuid(), fullName: "Adarsh Balika", username: "adarshbalika" },
       { _id: uuid(), fullName: "Preetha Srinivasan", username: "preetha" },

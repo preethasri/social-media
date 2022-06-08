@@ -23,35 +23,39 @@ import { followUser } from "../../features/user"
             <span className="aside-search material-icons">search</span>
             <input type="text" placeholder="search" />
             </div>
-            <div className="aside aside-header">
+            <div className="text-lg font-bold tracking-wide">
                 <h2>Who To Follow</h2>
             </div>
+            <div className="bg-[#f1f1f1] flex flex-col justify-center gap-4 m-4 mt-0 px-4 py-3  rounded-md  h-max w-full sticky top-[85px] z-0">
             {filteredUsers.map((user)=>(
-                <div className="aside aside-items">
-                <div className="aside aside-item cursor-pointer" key={user._id} onClick={()=>{navigate(`/profile/${user.username}`)}}>
+                <div>
+                <div className="flex items-start cursor-pointer gap-2" key={user._id} onClick={()=>{navigate(`/profile/${user.username}`)}}>
+                    <div>
                    <UserAvatar user={user} />
-                <div className="aside-item-headerText">
+                   </div>
+                <div className=" flex flex-col grow mt-5 ">
                         <h3>{user.firstName}
-                            <span className="aside-item-headerSpecial">
+                            <span className="aside-item-headerSpecial mt-5">
                                 @{user.username} </span>
                         </h3>
                     </div>
                 <div>
                     
-                    <div className="aside-item-btn">
-                        <button className="follow-btn" onClick={(e)=>{
+                    
+                        <button className="bg-primarybg text-sm py-1 px-4 rounded-full text-white mt-5" onClick={(e)=>{
                             e.stopPropagation() 
                             dispatch(followUser({token,followUserId:user._id})
                             )}}>Follow
 
                         </button>
 
-                    </div>
+                    
 
                 </div>
                 </div>
                 </div>
             ))}
+            </div>
             </div>
         ):
         null}

@@ -75,8 +75,8 @@ const LoginPage=()=>{
                   setLogin({
                     ...login,
                     input: {
-                      username: "adarshbalika",
-                      password: "adarshBalika123",
+                      username: "preetha",
+                      password: "chitra",
                     },
                   })
                 }>login with test credentials</button>
