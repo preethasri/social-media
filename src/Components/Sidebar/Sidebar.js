@@ -21,7 +21,7 @@ export const Sidebar=()=>{
     const dispatch=useDispatch()
 
     return(
-        <>
+        
         <div className='sidebar-container sm:sticky bg-dark  flex sm:flex-col sm:justify-between sm:h-screen sm:top-0 sm:overflow-y-auto overflow-x-hidden fixed bottom-0 left-0 w-full items-center  sm:border-0 border-t-2 border-darkGrey sm:z-0 z-40  '>
        <div className='flex items-center sm:items-start justify-around  sm:justify-start px-3 py-1 sm:py-4 sm:flex-col gap-3 sm:gap-2 tracking-wide grow'>
         <div className='brand'>
@@ -71,33 +71,14 @@ export const Sidebar=()=>{
         </button>
         </div>
         {showNewPostModal ?(
-            <div className=' top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default' onClick=
-            {(e)=>e.stopPropagation()}
-        
+            <div className="z-50 top-0 left-20 fixed w-[60%] h-full  flex justify-center items-center cursor-default "
+            onClick={(e)=>e.stopPropagation()}
             >
-              <PostModal setShowNewPostModal={setShowNewPostModal} />
+               <PostModal  setShowNewPostModal={setShowNewPostModal}/>
             </div>
-        ):(
-            null
-        )
-    }
+        ):(null)}
 
     </div>
-        </>
+        
     )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

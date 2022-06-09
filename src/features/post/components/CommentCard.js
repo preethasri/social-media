@@ -56,7 +56,7 @@ export const CommentCard = ({ comment, post }) => {
             </div>
         ) : null}
     </div>
-    <div className="py-2 px-4 text-slate-900 dark:text-slate-100 break-all mt-2">{comment.comment}</div>
+    <div className="py-2 px-4 text-black break-all mt-2">{comment.comment}</div>
    </div>
 </div>
     

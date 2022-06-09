@@ -61,7 +61,7 @@ export const PostModal=({post,setShowNewPostModal,setShowOptions})=>{
                    </button>
                    <button 
                    type="submit"
-                    className="bg-primarybg py-1 px-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-primarybg py-1 px-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed "
                     disabled={!input.trim() }>{post? "Save" :"Post"}
                    </button>
                </div>

@@ -56,7 +56,7 @@ export const users = [
     _id: uuid(),
     firstName: "Tanay",
     lastName: "Pratap",
-    username: "tanaypratap",
+    username: "tanay",
     password: "tanay123",
     fullName:"Tanay Pratap",
     userHandler:"tanay@2",

@@ -70,7 +70,7 @@ export const PostCard = ({ post }) => {
 
           <div className="relative">
             <i
-              className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
+              className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full z-10"
               onClick={(e) => {
                 setShowOptions((prev) => !prev);
                 e.stopPropagation();
