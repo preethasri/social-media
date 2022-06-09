@@ -6,9 +6,9 @@ import {PostModal} from '../../features/post'
 import { logOutHandler } from '../../Pages/Authentication';
 import './Sidebar.css'
 const activeStyle={
-    backgroundColor:"#c175ff",
+    
     fontWeight:"bold",
-    color:"black",
+    color:"#c175ff",
 }
 
 export const Sidebar=()=>{
@@ -22,7 +22,8 @@ export const Sidebar=()=>{
 
     return(
         <>
-        <div className='sidebar-container fixed-top'>
+        <div className='sidebar-container sm:sticky bg-dark  flex sm:flex-col sm:justify-between sm:h-screen sm:top-0 sm:overflow-y-auto overflow-x-hidden fixed bottom-0 left-0 w-full items-center  sm:border-0 border-t-2 border-darkGrey sm:z-0 z-40  '>
+       <div className='flex items-center sm:items-start justify-around  sm:justify-start px-3 py-1 sm:py-4 sm:flex-col gap-3 sm:gap-2 tracking-wide grow'>
         <div className='brand'>
             <Link to="/" className='link-tag'>
           
@@ -68,6 +69,7 @@ export const Sidebar=()=>{
             Post
 
         </button>
+        </div>
         {showNewPostModal ?(
             <div className=' top-0 left-0 fixed w-full h-full z-40 flex justify-center items-center cursor-default' onClick=
             {(e)=>e.stopPropagation()}

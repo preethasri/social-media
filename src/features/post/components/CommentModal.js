@@ -21,13 +21,12 @@ export const CommentModal = ({
   const loggedInUser = users.find(
     (dbUser) => dbUser.username === user.username
   );
-  console.log(loggedInUser.username)
+
   const commentId = currentComment?._id;
 
   const addCommentHandler = (e) => {
     e.preventDefault();
-    console.log("working")
-    
+   
      currentComment
      ?dispatch(editComment({token,postId:post._id,commentData:{comment},commentId: currentComment?._id}))
       

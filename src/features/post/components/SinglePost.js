@@ -59,7 +59,7 @@ function commentSubmitHandler(e) {
    return(
        
        <div 
-       className=' grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto'>
+       className=' grid sm:grid-cols-[5rem_1fr] md:grid-cols-1 lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto'>
            <Sidebar />
            <div className='sm:border-x border-[#f1f1f1]'>
                <h1 className="text-bold p-4 sticky top-0 bg-primary text-white backdrop-blur-sm z-10">

@@ -20,7 +20,7 @@ export const ProfilePage=()=>{
     const currentUserPosts=posts?.filter((post)=>post.username===username)
     return(
         
-        <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+        <div className="grid sm:grid-cols-[5rem_1fr] md:grid-cols-1 lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
             <Sidebar />
             <div className="sm:border-x border-darkGrey">
             <h1 className="text-bold px-4 py-2 sticky top:0 backdrop-blur-sm z-10 border-b border-darkGrey flex items-center rounded-full text-primary-900">

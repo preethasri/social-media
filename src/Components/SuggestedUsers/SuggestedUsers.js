@@ -18,7 +18,7 @@ import { followUser } from "../../features/user"
     return(
         <div>
         {filteredUsers.length ?(
-            <div className="aside-container">
+            <div className="aside-container fixed top-0">
             <div className="aside-input">
             <span className="aside-search material-icons">search</span>
             <input type="text" placeholder="search" />
@@ -26,7 +26,7 @@ import { followUser } from "../../features/user"
             <div className="text-lg font-bold tracking-wide">
                 <h2>Who To Follow</h2>
             </div>
-            <div className="bg-[#f1f1f1] flex flex-col justify-center gap-4 m-4 mt-0 px-4 py-3  rounded-md  h-max w-full sticky top-[85px] z-0">
+            <div className="bg-[#f1f1f1] pt-4 p-2">
             {filteredUsers.map((user)=>(
                 <div>
                 <div className="flex items-start cursor-pointer gap-2" key={user._id} onClick={()=>{navigate(`/profile/${user.username}`)}}>

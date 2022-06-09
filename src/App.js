@@ -1,6 +1,6 @@
 import "./App.css";
 import {MyRoutes} from './Components'
-
+import {Toaster} from 'react-hot-toast'
 function App() {
 
     
@@ -8,6 +8,7 @@ function App() {
     <>
    <div>
     <MyRoutes />
+    <Toaster />
     </div>
     </>
   )
