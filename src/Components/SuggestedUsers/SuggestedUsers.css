@@ -1,4 +1,7 @@
+.aside-container{
+    margin-left: 1rem;
 
+}
 .aside-input{
     display: flex;
     align-items:center;

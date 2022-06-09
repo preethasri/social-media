@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-@media only screen and (min-width:800px){
+@media only screen and (min-width:1000px){
     .bottom-nav-menu{
         display:none;
     }

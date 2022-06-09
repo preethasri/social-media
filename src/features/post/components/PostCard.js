@@ -39,7 +39,7 @@ export const PostCard = ({ post }) => {
 
   return (
     <div
-      className="grid grid-cols-[2rem_1fr] gap-2 bg-darkSecondary text-sm border-b border-darkGrey px-4 py-3 cursor-pointer"onClick={() => navigate(`/post/${id}`)}
+      className="grid grid-cols-[2rem_1fr] gap-2  text-sm border-b border-darkGrey px-4 py-3 cursor-pointer"onClick={() => navigate(`/post/${id}`)}
       ref={postRef}
     >
       <div
