@@ -1,7 +1,8 @@
 import './BottomNav.css'
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import {UserAvatar} from '../UserAvatar/UserAvatar'
+import { logOutHandler } from '../../Pages/Authentication';
 const activeStyle={
     
     fontWeight:"bold",
@@ -12,7 +13,7 @@ const activeStyle={
 export const BottomNav=()=>{
     const {user}=useSelector((state)=>state.auth)
     const {users}=useSelector((state)=>state.user)
-
+    const dispatch=useDispatch()
     const currentUser=users.find((dbUser)=>dbUser.username===user.username)
     
     return(
@@ -41,6 +42,11 @@ export const BottomNav=()=>{
                         <UserAvatar user={currentUser}  />
                     </div>
                     </NavLink>
+                    
+                <button onClick={()=>dispatch(logOutHandler())} className="sidebar-items" >
+                    <span className="material-icons"   >logout</span>
+                 </button>
+
 
                 </div>
 
